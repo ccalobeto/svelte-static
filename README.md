@@ -65,6 +65,21 @@ It’s still very useful for prefetching data from a CMS or other data source at
 - If you disable SSR, it will generate a server blank HTML.
 ![](/images/universal-ssr-disabled.gif)
 
+## 1.7 How does SSR work with static sites
+- With **SSR** enabled (by default) and during build time, sveltekit will invoke the load functions in `+page.js` and `+page.server.js` if they exist, and generate a HTML output based on this result. Here the html is not generated because it has't prerender it. 
+![](/images/ssr-enabled.gif)
+![](/images/ssr-prerender.png)
 
+- The HTML output will never change unless you rebuild the project.
+
+- With **ssr** enabled your site will be benefitiated by **SEO**.
+
+- To disable SSR :
+routes/ssr/+page.js
+```sh
+export const ssr = false
+...
+```
+![](/images/ssr-disabled.gif)
 
 
