@@ -82,4 +82,18 @@ export const ssr = false
 ```
 ![](/images/ssr-disabled.gif)
 
+## 1.8 Prerendering (SSG)
+We are going to display our blog using adapter-static in **Github Pages**. 
+
+- We create our server load function in `routes/+page.server.js` to be displayed in our main page `routes/+page.svelte`. It will look like this
+![](/images/blog-dev.png)
+
+- We can't build because we haven't already create the individual post (dynamic route), it throws this error
+![](/images/blog-build-error.png)
+
+- Let's create `routes/posts/[id]/+page.server.js` and `routes/posts/[id]/+page.svelte` for individual post. Now we can build the project, it looks like
+![](/images/blog-build-ok.png)
+
+>[!IMPORTANt]
+> Your `<a ref="./<route>">` must use **.** in your project.
 
