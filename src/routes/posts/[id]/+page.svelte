@@ -1,8 +1,10 @@
 <script>
-	export let data;
+	import { base } from '$app/paths';
+
+	let { data } = $props();
 </script>
 
-<a href="/">Back</a>
+<a href="{base}/">Back</a>
 <br />
 
 <h1>{data.post.title}</h1>
