@@ -13,5 +13,5 @@
 <h1>Blog posts</h1>
 {#each data.posts as post}
 	<h2>{post.title}</h2>
-	<a href="/posts/{post.id}">Read more of post {post.id}</a>
+	<a href="./posts/{post.id}">Read more of post {post.id}</a>
 {/each}
